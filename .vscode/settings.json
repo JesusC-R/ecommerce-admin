@@ -1,0 +1,10 @@
+{
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.experimental.classRegex": [
+    
+    "tw`([^`]*)`",
+    "tw=\"([^\"]*)\"",
+    "className=\"([^\"]*)\""
+  ],
+  "tailwindCSS.experimental.configFile": null
+}

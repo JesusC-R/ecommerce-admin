@@ -1,0 +1,17 @@
+Steps to complete this project
+1. Create a react app, and add routes, and typescript.
+2. Install Clerk Provider for authentication.
+  a. Wrap the body contents with <ClerkProvider> </ClerkProvider>
+  b. When creating the Auth layout create the following folder structure
+     from the Clerk Provider documentation.
+  c. Create a layout.tsx file to apply styles to all the componentes
+     dynamically.
+3. Store the page.tsx file into the (root) folder to improve
+   organization.
+4. Install the Dialog component from the shadcn library.
+5. Store all componentes in a separate folder.
+6. Create a modal for the Dialog component named modal.tsx
+7. Use Zustand to manage state and create a file names use-store-modal.tsx
+   which will be inside the hooks folder.
+   
+
