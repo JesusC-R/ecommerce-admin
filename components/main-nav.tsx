@@ -1,9 +1,9 @@
 "use client";
 
-import { useParams, usePathname } from "next/navigation";
-import Link from "next/link";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function MainNav({
   className,
@@ -11,6 +11,7 @@ export function MainNav({
 }: React.HTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
   const params = useParams();
+  const router = useRouter();
 
   const routes = [
     {
@@ -19,6 +20,7 @@ export function MainNav({
       active: pathname === `/${params.storeId}/settings`,
     },
   ];
+
 
   return (
     <nav className={cn("flex items-center space-x-4 lg:space-x-6", className)}>

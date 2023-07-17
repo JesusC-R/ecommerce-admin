@@ -37,6 +37,8 @@ export default function StoreSwitcher({
   className,
   items = [],
 }: StoreSwitcherProps) {
+  const [open, setOpen] = useState(false);
+
   const storeModal = useStoreModal();
   const params = useParams();
   const router = useRouter();
@@ -50,14 +52,12 @@ export default function StoreSwitcher({
     (item) => item.value === params.storeId
   );
 
-  const [open, setOpen] = useState(false);
 
   const onStoreSelect = (store: { label: string; value: string }) => {
     setOpen(false);
     router.push(`/${store.value}`);
     console.log("store name: " + store.label);
   };
-  console.log("Formatted Items: " + currentStore?.label);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -71,7 +71,7 @@ export default function StoreSwitcher({
           className={cn("w-[200px] justify-between", className)}
         >
           <StoreIcon className="mr-2 h-4 w-4" />
-          {currentStore?.label}
+          Your Stores
           <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
