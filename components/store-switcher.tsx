@@ -71,7 +71,7 @@ export default function StoreSwitcher({
           className={cn("w-[200px] justify-between", className)}
         >
           <StoreIcon className="mr-2 h-4 w-4" />
-          Your Stores
+          {currentStore?.label}
           <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -81,7 +81,7 @@ export default function StoreSwitcher({
             <CommandInput placeholder="Search Store..." />
             <CommandEmpty>No Store Found.</CommandEmpty>
             <CommandGroup heading="Stores">
-              {formattedItems.map((store) => (
+             nam {formattedItems.map((store) => (
                 <CommandItem
                   key={store.value}
                   onSelect={() => onStoreSelect(store)}
