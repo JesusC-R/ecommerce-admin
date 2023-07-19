@@ -54,7 +54,7 @@ export async function DELETE(
       return new NextResponse("Store id is required", { status: 400 });
     }
 
-    // Update Store's name
+    // Delete Store
     const store = await prismadb.store.deleteMany({
       where: {
         id: params.storeId,
@@ -63,7 +63,7 @@ export async function DELETE(
     });
 
     return NextResponse.json(store);
-    
+
   } catch (error) {
     console.log("[STORE_DELETE]", error);
     return new NextResponse("Internal error", { status: 500 });
