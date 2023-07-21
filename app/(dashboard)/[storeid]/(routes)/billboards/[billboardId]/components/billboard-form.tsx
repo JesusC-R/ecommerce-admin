@@ -66,7 +66,6 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
         await axios.patch(`/api/stores/${params.storeId}/billboards/${params.billboardId}`, data);
       } else {
         await axios.post(`/api/stores/${params.storeId}/billboards`, data);
-
       }
       router.refresh();
       router.push(`/${params.storeId}/billboards`);
