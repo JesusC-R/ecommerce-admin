@@ -10,7 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import { BillboardColumn } from "../../components/columns";
+import { BillboardColumn } from "./columns";
 import { Button } from "@/components/ui/button";
 import { toast } from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
