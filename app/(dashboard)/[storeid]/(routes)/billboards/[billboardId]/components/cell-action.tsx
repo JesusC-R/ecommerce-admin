@@ -14,7 +14,6 @@ import { BillboardColumn } from "../../components/columns";
 import { Button } from "@/components/ui/button";
 import { toast } from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
-import prismadb from "@/lib/prismadb";
 import { useState } from "react";
 import { AlertModal } from "@/components/modals/alert-modal";
 
@@ -38,7 +37,7 @@ export const CellACtion: React.FC<CellActionProps> = ({ data }) => {
     try {
       setLoading(true);
       await axios.delete(
-        `/api/stores/${params.storeId}/billboards/${params.billboardId}`
+        `/api/stores/${params.storeId}/billboards/${data.id}`
       );
       router.refresh();
       router.push(`/${params.storeId}/billboards`);
