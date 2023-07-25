@@ -14,7 +14,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-// import { useCategoryModal } from "@/hooks/use-category-modal";
 import { AlertModal } from "@/components/modals/alert-modal";
 
 import { CategoryColumn } from "./columns";
@@ -34,7 +33,8 @@ export const CellAction: React.FC<CellActionProps> = ({
   const onConfirm = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/categories/${data.id}`);
+      console.log(data.id);
+      await axios.delete(`/api/stores/${params.storeId}/categories/${data.id}`);
       toast.success('Category deleted.');
       router.refresh();
     } catch (error) {
