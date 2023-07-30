@@ -100,11 +100,11 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 
       if (initialData) {
         await axios.patch(
-          `/api/stores/${params.storeId}/products/${params.productId}`,
+          `/api/${params.storeId}/products/${params.productId}`,
           data
         );
       } else {
-        await axios.post(`/api/stores/${params.storeId}/products`, data);
+        await axios.post(`/api/${params.storeId}/products`, data);
       }
       router.refresh();
       router.push(`/${params.storeId}/products`);
@@ -120,7 +120,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
     try {
       setLoading(true);
       await axios.delete(
-        `/api/stores/${params.storeId}/products/${params.productId}`
+        `/api/${params.storeId}/products/${params.productId}`
       );
       router.refresh();
       router.push(`/${params.storeId}/products`);

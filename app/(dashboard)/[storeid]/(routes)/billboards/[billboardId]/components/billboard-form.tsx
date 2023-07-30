@@ -66,11 +66,11 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
 
       if (initialData) {
         await axios.patch(
-          `/api/stores/${params.storeId}/billboards/${params.billboardId}`,
+          `/api/${params.storeId}/billboards/${params.billboardId}`,
           data
         );
       } else {
-        await axios.post(`/api/stores/${params.storeId}/billboards`, data);
+        await axios.post(`/api/${params.storeId}/billboards`, data);
       }
       router.refresh();
       router.push(`/${params.storeId}/billboards`);
@@ -86,7 +86,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
     try {
       setLoading(true);
       await axios.delete(
-        `/api/stores/${params.storeId}/billboards/${params.billboardId}`
+        `/api/${params.storeId}/billboards/${params.billboardId}`
       );
       router.refresh();
       router.push(`/${params.storeId}/billboards`);

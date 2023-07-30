@@ -72,11 +72,11 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
 
       if (initialData) {
         await axios.patch(
-          `/api/stores/${params.storeId}/categories/${params.categoryId}`,
+          `/api/${params.storeId}/categories/${params.categoryId}`,
           data
         );
       } else {
-        await axios.post(`/api/stores/${params.storeId}/categories`, data);
+        await axios.post(`/api/${params.storeId}/categories`, data);
       }
       router.refresh();
       router.push(`/${params.storeId}/categories`);
@@ -92,7 +92,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
     try {
       setLoading(true);
       await axios.delete(
-        `/api/stores/${params.storeId}/categories/${params.categoryId}`
+        `/api${params.storeId}/categories/${params.categoryId}`
       );
       router.refresh();
       router.push(`/${params.storeId}/categories`);

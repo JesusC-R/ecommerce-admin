@@ -36,7 +36,7 @@ export const CellACtion: React.FC<CellActionProps> = ({ data }) => {
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/stores/${params.storeId}/sizes/${data.id}`);
+      await axios.delete(`/api/${params.storeId}/sizes/${data.id}`);
       router.refresh();
       router.push(`/${params.storeId}/sizes`);
       toast.success("Size deleted.");

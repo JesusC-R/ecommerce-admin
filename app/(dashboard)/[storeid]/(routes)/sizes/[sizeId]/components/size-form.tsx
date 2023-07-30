@@ -23,7 +23,6 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Heading } from "@/components/ui/heading";
 import { AlertModal } from "@/components/modals/alert-modal";
-import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -62,11 +61,11 @@ export const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
 
       if (initialData) {
         await axios.patch(
-          `/api/stores/${params.storeId}/sizes/${params.sizeId}`,
+          `/api/${params.storeId}/sizes/${params.sizeId}`,
           data
         );
       } else {
-        await axios.post(`/api/stores/${params.storeId}/sizes`, data);
+        await axios.post(`/api/${params.storeId}/sizes`, data);
       }
       router.refresh();
       router.push(`/${params.storeId}/sizes`);
@@ -82,7 +81,7 @@ export const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
     try {
       setLoading(true);
       await axios.delete(
-        `/api/stores/${params.storeId}/sizes/${params.sizeId}`
+        `/api/${params.storeId}/sizes/${params.sizeId}`
       );
       router.refresh();
       router.push(`/${params.storeId}/sizes`);
