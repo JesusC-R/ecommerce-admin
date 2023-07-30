@@ -12,11 +12,10 @@ import { SizeColumn, columns } from "./columns";
 import { ApiList } from "@/components/ui/api-list";
 
 interface SizeClientProps {
-  data: SizeColumn[]
+  data: SizeColumn[];
 }
 
 export const SizeClient: React.FC<SizeClientProps> = ({ data }) => {
-
   const params = useParams();
   const router = useRouter();
 
@@ -28,15 +27,15 @@ export const SizeClient: React.FC<SizeClientProps> = ({ data }) => {
           description="Manage sizes for you store"
         />
         <Button onClick={() => router.push(`/${params.storeId}/sizes/new`)}>
-          <Plus className="mr-2 h-4 w-4"/>
+          <Plus className="mr-2 h-4 w-4" />
           Add New
         </Button>
       </div>
       <Separator />
-      <DataTable searchKey="label" columns={columns} data={data}/>
-      <Heading title="API" description="API calls for sizes"/>
+      <DataTable searchKey="label" columns={columns} data={data} />
+      <Heading title="API" description="API calls for sizes" />
       <Separator />
-      <ApiList entityName="sizes" entityIdName="sizeId"/>
+      <ApiList entityName="sizes" entityIdName="sizeId" />
     </>
   );
-}
+};
