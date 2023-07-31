@@ -52,7 +52,6 @@ export default function StoreSwitcher({
     (item) => item.value === params.storeId
   );
 
-
   const onStoreSelect = (store: { label: string; value: string }) => {
     setOpen(false);
     router.push(`/${store.value}`);
@@ -81,7 +80,7 @@ export default function StoreSwitcher({
             <CommandInput placeholder="Search Store..." />
             <CommandEmpty>No Store Found.</CommandEmpty>
             <CommandGroup heading="Stores">
-             nam {formattedItems.map((store) => (
+              {formattedItems.map((store) => (
                 <CommandItem
                   key={store.value}
                   onSelect={() => onStoreSelect(store)}
