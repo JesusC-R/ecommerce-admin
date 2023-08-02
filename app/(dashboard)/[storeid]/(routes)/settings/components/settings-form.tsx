@@ -133,6 +133,6 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
         description={`${origin}/api/${params.storeId}`}
         variant="public"
       />
-    </>
+    </> 
   );
 };
