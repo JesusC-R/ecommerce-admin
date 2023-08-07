@@ -1,4 +1,4 @@
-import { CreditCard, DollarSign } from "lucide-react";
+import { BoxIcon, CreditCard, DollarSign } from "lucide-react";
 
 import { getSalesCount } from "@/actions/get-sales-count";
 import { getStockCount } from "@/actions/get-stock-count";
@@ -51,7 +51,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({ params }) => {
               <CardTitle className="text-sm font-medium">
                 Products in stock
               </CardTitle>
-              <CreditCard className="h-4 w-4 text-muted-foreground" />
+              <BoxIcon className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{stockCount}</div>
